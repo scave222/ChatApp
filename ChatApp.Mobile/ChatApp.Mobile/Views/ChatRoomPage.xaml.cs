@@ -1,4 +1,7 @@
-﻿using System;
+﻿using ChatApp.Mobile.Services.Core;
+using ChatApp.Mobile.Services.Interfaces;
+using ChatApp.Mobile.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +15,13 @@ namespace ChatApp.Mobile.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ChatRoomPage : ContentPage
     {
-        public ChatRoomPage(string userId, string email)
+        ChatRoomPageViewModel vm;
+        public ChatRoomPage(string userId, string userName)
         {
             InitializeComponent();
+            ChatService chatService = new ChatService();
+            vm = new ChatRoomPageViewModel(chatService , userId, userName);
+            this.BindingContext = vm;
         }
     }
 }

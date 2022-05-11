@@ -73,7 +73,7 @@ namespace ChatApp.Mobile.ViewModels
         {
             //var param = new NavigationParameters { { "UserNameId", Email } };
             //NavigationService.NavigateAsync($"NavigationPage/{nameof(ChatRoomPage)}", param);
-            await Application.Current.MainPage.Navigation.PushAsync(new ChatRoomPage("UserNameId", UserName));
+            App.Current.MainPage = new NavigationPage(new ChatRoomPage("UserNameId", UserName));
         }
     }
 }

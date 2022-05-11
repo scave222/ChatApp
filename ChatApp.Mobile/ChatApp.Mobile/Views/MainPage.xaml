@@ -12,7 +12,7 @@
 
                 <Frame Style="{StaticResource ButtonFrameStyle}" >
                     <Button Style="{StaticResource ButtonStyle}"
-                        Text="Join" Command="{Binding NavigationToChatPageCommand}"/>
+                        Text="Join" Command="{Binding NavigateToChatPageCommand}"/>
                 </Frame>
             </StackLayout>
         </Grid>
